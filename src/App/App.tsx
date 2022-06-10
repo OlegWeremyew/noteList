@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
+import { Header, MainWindow } from '../components';
+import { themeLight } from '../theme';
 import { ReturnComponentType } from '../types/ReturnComponentType';
 
-export const App = (): ReturnComponentType => {
-  const currentTheme: any = {};
+import { AppWrapper } from './components';
 
-  return (
-    <ThemeProvider theme={currentTheme}>
-      <React.Suspense fallback={<h1>df</h1>}>
-        <div className="App">чсичс</div>
-      </React.Suspense>
-    </ThemeProvider>
-  );
-};
+export const App = (): ReturnComponentType => (
+  <ThemeProvider theme={themeLight}>
+    <Suspense fallback={<h1>df</h1>}>
+      <AppWrapper>
+        <Header />
+        <MainWindow />
+      </AppWrapper>
+    </Suspense>
+  </ThemeProvider>
+);

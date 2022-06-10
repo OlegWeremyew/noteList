@@ -2,5 +2,5 @@ import React from 'react';
 
 import { ReturnComponentType } from '../../types/ReturnComponentType';
 
-const nodePage = (): ReturnComponentType => <div>SettingsPage</div>;
-export default nodePage;
+const NodePage = (): ReturnComponentType => <div>NodePage</div>;
+export default NodePage;
