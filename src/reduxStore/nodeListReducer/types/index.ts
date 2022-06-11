@@ -15,5 +15,6 @@ export type nodeListType = {
 export type NodeType = {
   id: string;
   title: string;
+  description: string;
   isCompleted: boolean;
 };

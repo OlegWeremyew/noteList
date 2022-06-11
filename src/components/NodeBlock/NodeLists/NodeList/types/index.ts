@@ -1,5 +1,6 @@
+import { NodeType } from '../../../../../reduxStore/nodeListReducer/types';
+
 export type NodeListPropsType = {
-  title: string;
-  id: string;
-  removeNodeList: (nodeListID: string) => void;
+  node: NodeType[];
+  nodeListID: string;
 };

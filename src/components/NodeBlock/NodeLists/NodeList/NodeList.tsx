@@ -3,24 +3,23 @@ import React, { FC } from 'react';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
 import { NodeListContainer } from './components';
+import NodeForm from './NodeForm/NodeForm';
 import { NodeListPropsType } from './types';
 
 export const NodeList: FC<NodeListPropsType> = ({
-  title,
-  removeNodeList,
-  id,
+  node,
+  nodeListID,
 }): ReturnComponentType => (
   <NodeListContainer>
+    <NodeForm nodeListID={nodeListID} />
     <div>
-      <h1>{title}</h1>
-      <button type="button" onClick={() => removeNodeList(id)}>
-        del list
-      </button>
-    </div>
-    <div>
-      <input type="text" placeholder="node title" />
-      <input type="text" placeholder="node description" />
-      <button type="button">add node</button>
+      {node.map(item => (
+        <div key={item.id}>
+          <div>{item.isCompleted}</div>
+          <div>{item.title}</div>
+          <button type="button">del</button>
+        </div>
+      ))}
     </div>
   </NodeListContainer>
 );
