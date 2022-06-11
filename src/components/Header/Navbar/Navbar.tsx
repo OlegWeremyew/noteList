@@ -9,7 +9,7 @@ import { NavbarContainer } from './components';
 
 export const Navbar = (): ReturnComponentType => (
   <NavbarContainer>
-    <NavLink to={PATH.HOME_PAGE_ROUTE}>Node List</NavLink>
+    <NavLink to={PATH.HOME_PAGE_ROUTE}>Node</NavLink>
     <NavLink to={PATH.SETTINGS_PAGE_ROUTE}>Settings</NavLink>
   </NavbarContainer>
 );
