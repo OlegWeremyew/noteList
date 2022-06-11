@@ -1,32 +1,22 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
+import { useDispatch } from 'react-redux';
+
+import { Settings } from '../../components/Settings';
+import { SettingsContainer } from '../../layouts';
+import { themeActions } from '../../reduxStore';
 import { ReturnComponentType } from '../../types/ReturnComponentType';
-import { SettingsContainer } from "../../layouts";
-import { Settings } from "../../components/Settings";
 
 const SettingsPage = (): ReturnComponentType => {
-   const dispatch = useDispatch();
-
-  const isShowControlPanel = useSelector(getIsShowControlPanel);
-
-  const setHistoryBlockVisibility = useCallback((): void => {
-    dispatch(calculatorAction.setControlPanelVisibility(!isShowControlPanel));
-  }, [dispatch, isShowControlPanel]);
+  const dispatch = useDispatch();
 
   const resetAllSettings = useCallback((): void => {
-    dispatch(calculatorAction.setControlPanelVisibility(true));
     dispatch(themeActions.changeTheme('dark'));
   }, [dispatch]);
 
-  const textSwitchValue = isShowControlPanel ? 'hide' : 'show';
-
   return (
     <SettingsContainer>
-      <Settings
-        textSwitchValue={textSwitchValue}
-        setHistoryBlockVisibility={setHistoryBlockVisibility}
-        resetAllSettings={resetAllSettings}
-      />
+      <Settings resetAllSettings={resetAllSettings} />
     </SettingsContainer>
   );
 };

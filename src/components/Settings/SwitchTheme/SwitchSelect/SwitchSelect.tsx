@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { themes } from '../../../../constants';
+import { themes } from '../../../../constants/themes/themes';
 import { getThemeValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 

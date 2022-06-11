@@ -3,8 +3,8 @@ import React, { ChangeEvent, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { SettingsTitle } from '../../../layouts';
-import { themeActions } from '../../../reducers';
-import { MainThemeType } from '../../../reducers/themeReducer/types';
+import { themeActions } from '../../../reduxStore';
+import { MainThemeType } from '../../../reduxStore/themeReducer/types';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
 
 import { Container } from './components';
