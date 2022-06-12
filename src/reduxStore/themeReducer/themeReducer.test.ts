@@ -4,6 +4,7 @@ import { themeActions, themeReducer } from './index';
 
 const startState: initStateThemeType = {
   theme: 'dark' as MainThemeType,
+  readonly: false,
 };
 
 test('topic value should be equal to light', () => {

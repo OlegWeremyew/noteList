@@ -18,9 +18,7 @@ export const Header = (): ReturnComponentType => {
     let themeImage: any;
     if (themValue === 'light') themeImage = nodeListBlack;
     if (themValue === 'dark') themeImage = nodeListLight;
-    if (themValue === 'light-brown') themeImage = nodeListLight;
     if (themValue === 'heavenly') themeImage = nodeListLightSky;
-    if (themValue === 'crimson') themeImage = nodeListLight;
     return themeImage;
   };
 

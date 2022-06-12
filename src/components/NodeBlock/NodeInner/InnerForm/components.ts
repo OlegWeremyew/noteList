@@ -25,10 +25,42 @@ export const Input = styled.input`
   font-size: 18px;
   border-radius: 5px;
   margin: 0;
-  border: ${({ theme }: ThemeType) => theme.border} 3px solid;
-  background: ${({ theme }: ThemeType) => theme.buttonsBgc};
+  border: ${({ theme }: ThemeType) => theme.border} 2px solid;
+  background: ${({ theme }: ThemeType) => theme.input};
 
-  &:focus {
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not([disabled]):focus {
     outline: none;
+    border: ${({ theme }: ThemeType) => theme.border} 3px solid;
+  }
+`;
+
+export const InnerButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 140px;
+  background: ${({ theme }: ThemeType) => theme.hoverBgc};
+  border: outset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
+  margin: 2px;
+  font-size: 20px;
+  cursor: pointer;
+  color: ${({ theme }: ThemeType) => theme.color};
+  border-radius: 5px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not([disabled]):hover {
+    border: inset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
+  }
+
+  &:not([disabled]):active {
+    opacity: 0.8;
   }
 `;

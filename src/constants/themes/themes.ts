@@ -1,9 +1,3 @@
 import { MainThemeType } from '../../reduxStore/themeReducer/types';
 
-export const themes: MainThemeType[] = [
-  'light',
-  'dark',
-  'light-brown',
-  'heavenly',
-  'crimson',
-];
+export const themes: MainThemeType[] = ['light', 'dark', 'heavenly'];

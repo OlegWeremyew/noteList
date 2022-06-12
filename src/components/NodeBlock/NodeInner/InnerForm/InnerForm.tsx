@@ -1,26 +1,22 @@
 import React, { ChangeEvent, useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { StyledButton } from '../../../../layouts';
 import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
-import { FormContainer, InnerFormContainer, Input } from './components';
+import { FormContainer, InnerButton, InnerFormContainer, Input } from './components';
 
 export const InnerForm = (): ReturnComponentType => {
   const dispatch = useDispatch();
+  const readonly = useSelector(getReadOnlyValue);
   const [title, setTitle] = useState<string>('');
-  const [error, setError] = useState<string>('');
 
   const adNewNodeList = (): void => {
     if (title.trim()) {
       dispatch(nodeListAction.addNewNodeList(title));
       setTitle('');
-      setError('');
-    } else {
-      setTitle('');
-      setError('required');
     }
   };
 
@@ -36,12 +32,13 @@ export const InnerForm = (): ReturnComponentType => {
           placeholder="Enter node title"
           onChange={e => setNodeListTitle(e)}
           value={title}
+          required
+          disabled={readonly}
         />
-        <StyledButton type="button" onClick={adNewNodeList}>
+        <InnerButton type="button" onClick={adNewNodeList} disabled={readonly}>
           Add list
-        </StyledButton>
+        </InnerButton>
       </FormContainer>
-      {error}
     </InnerFormContainer>
   );
 };

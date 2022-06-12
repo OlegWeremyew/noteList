@@ -10,6 +10,7 @@ export const themeLight: DefaultTheme = {
   border: colors.black,
   displayBgc: colors.darkWhite,
   error: colors.error,
+  input: colors.LightInput,
 };
 
 export const themeDark: DefaultTheme = {
@@ -20,16 +21,7 @@ export const themeDark: DefaultTheme = {
   border: colors.hoverWhite,
   displayBgc: colors.lightBlack,
   error: colors.error,
-};
-
-export const themeLightBrown: DefaultTheme = {
-  background: colors.lightBrown,
-  color: colors.burgundy,
-  buttonsBgc: colors.darkBrown,
-  hoverBgc: colors.hoverBrown,
-  border: colors.burgundy,
-  displayBgc: colors.darkBrown,
-  error: colors.error,
+  input: colors.blackInput,
 };
 
 export const themeHeavenly: DefaultTheme = {
@@ -40,13 +32,5 @@ export const themeHeavenly: DefaultTheme = {
   border: colors.lightBlack,
   displayBgc: colors.heavenlyBlack,
   error: colors.error,
-};
-export const themeCrimson: DefaultTheme = {
-  background: colors.crimson,
-  color: colors.black,
-  buttonsBgc: colors.crimsonBlack,
-  hoverBgc: colors.hoverCrimson,
-  border: colors.lightBlack,
-  displayBgc: colors.crimson,
-  error: colors.error,
+  input: colors.BlueInput,
 };

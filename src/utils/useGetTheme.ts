@@ -4,13 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { themeActions } from '../reduxStore';
 import { getThemeValue } from '../selectors';
-import {
-  themeCrimson,
-  themeDark,
-  themeHeavenly,
-  themeLight,
-  themeLightBrown,
-} from '../theme';
+import { themeDark, themeHeavenly, themeLight } from '../theme';
 import { ThemeObjectType } from '../types/themeType';
 
 export const useGetTheme = (): ThemeObjectType => {
@@ -31,8 +25,6 @@ export const useGetTheme = (): ThemeObjectType => {
 
   if (themeValue === 'light') themeStyle = themeLight;
   if (themeValue === 'dark') themeStyle = themeDark;
-  if (themeValue === 'light-brown') themeStyle = themeLightBrown;
   if (themeValue === 'heavenly') themeStyle = themeHeavenly;
-  if (themeValue === 'crimson') themeStyle = themeCrimson;
   return themeStyle;
 };

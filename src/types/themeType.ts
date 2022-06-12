@@ -10,6 +10,7 @@ export type ThemeObjectType = {
   border: string;
   error: string;
   displayBgc: string;
+  input: string;
 };
 
 declare module 'styled-components' {
@@ -21,5 +22,6 @@ declare module 'styled-components' {
     border: string;
     error: string;
     displayBgc: string;
+    input: string;
   }
 }

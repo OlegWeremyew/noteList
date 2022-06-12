@@ -10,4 +10,12 @@ export const themeActions = {
       },
     } as const;
   },
+  setReadOnlyStatus(readonly: boolean) {
+    return {
+      type: themeConstants.SET_READ_ONLY_STATUS,
+      payload: {
+        readonly,
+      },
+    } as const;
+  },
 };

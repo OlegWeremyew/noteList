@@ -7,10 +7,15 @@ export const NodeListsContainer = styled.div`
   width: 90%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 0 auto;
 `;
 export const NodeListBlock = styled.div`
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 380px;
   margin: 15px 5px;
+  border-radius: 15px;
   background: ${({ theme }: ThemeType) => theme.buttonsBgc};
-  border: 2px solid ${({ theme }: ThemeType) => theme.border};
+  border: 3px solid ${({ theme }: ThemeType) => theme.border};
 `;

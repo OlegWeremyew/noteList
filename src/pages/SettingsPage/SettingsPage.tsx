@@ -12,6 +12,7 @@ const SettingsPage = (): ReturnComponentType => {
 
   const resetAllSettings = useCallback((): void => {
     dispatch(themeActions.changeTheme('dark'));
+    dispatch(themeActions.setReadOnlyStatus(false));
   }, [dispatch]);
 
   return (

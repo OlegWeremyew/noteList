@@ -39,35 +39,24 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   height: 35px;
-  width: 140px;
-  background: ${({ theme }: ThemeType) => theme.buttonsBgc};
-  margin: 2px;
+  width: 55px;
+  background: ${({ theme }: ThemeType) => theme.hoverBgc};
+  border: outset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
+  margin: 8px 2px 2px 12px;
   font-size: 20px;
   cursor: pointer;
   color: ${({ theme }: ThemeType) => theme.color};
   border-radius: 5px;
-  border: ${({ theme }: ThemeType) => theme.border} 3px solid;
 
-  &:hover {
-    background: ${({ theme }: ThemeType) => theme.hoverBgc};
-    border: outset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
+  &:disabled {
+    cursor: not-allowed;
   }
-  &:active {
+
+  &:not([disabled]):hover {
     border: inset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
   }
-`;
 
-export const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  background: ${({ theme }: ThemeType): string => theme.background};
-`;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &:not([disabled]):active {
+    opacity: 0.8;
+  }
 `;

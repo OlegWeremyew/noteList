@@ -50,7 +50,7 @@
     "react/jsx-max-props-per-line": [
       2,
       {
-        "maximum": 2,
+        "maximum": 3,
         "when": "always"
       }
     ],

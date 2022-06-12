@@ -1,18 +1,19 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { nodeListAction } from '../../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { getReadOnlyValue } from '../../../../../selectors';
 import { ReturnComponentType } from '../../../../../types/ReturnComponentType';
-import { NodeFormContainer } from '../components';
 
+import { Input, Label, NodeButton, NodeFormContainer, Textarea } from './components';
 import { NodeFormType } from './types';
 
 const NodeForm: FC<NodeFormType> = ({ nodeListID }): ReturnComponentType => {
   const dispatch = useDispatch();
+  const readonly = useSelector(getReadOnlyValue);
   const [nodeTitle, setNodeTitle] = useState<string>('');
   const [nodeDescription, setNodeDescription] = useState<string>('');
-  const [error, setError] = useState<string>('');
 
   const setNewNodeTitle = (e: ChangeEvent<HTMLInputElement>): void => {
     setNodeTitle(e.currentTarget.value);
@@ -27,30 +28,32 @@ const NodeForm: FC<NodeFormType> = ({ nodeListID }): ReturnComponentType => {
       dispatch(nodeListAction.addNewNodeInList(nodeListID, nodeTitle, nodeDescription));
       setNodeTitle('');
       setNodeDescription('');
-      setError('');
-    } else {
-      setError('required');
     }
   };
 
   return (
     <NodeFormContainer>
-      <input
+      <Label htmlFor="NodeTitle">Node title:</Label>
+      <Input
+        id="NodeTitle"
         type="text"
-        placeholder="node title"
+        placeholder="Node title"
         onChange={e => setNewNodeTitle(e)}
         value={nodeTitle}
+        required
+        disabled={readonly}
       />
-      {error}
-      <textarea
-        placeholder="node description"
+      <Label htmlFor="NodeDescription">Node description:</Label>
+      <Textarea
+        placeholder="Node description"
         onChange={e => setNewNodeDescription(e)}
         value={nodeDescription}
+        required
+        disabled={readonly}
       />
-      {error}
-      <button type="button" onClick={addNewNodeInList}>
-        add node
-      </button>
+      <NodeButton type="button" onClick={addNewNodeInList} disabled={readonly}>
+        Add node
+      </NodeButton>
     </NodeFormContainer>
   );
 };

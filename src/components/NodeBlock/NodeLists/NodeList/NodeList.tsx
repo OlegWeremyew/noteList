@@ -1,11 +1,20 @@
 import React, { FC } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
-import { HelpfulBlock, NodeItem, NodeListContainer, NodeTitle } from './components';
+import {
+  DeleteNodeButton,
+  HelpfulBlock,
+  NodeDescription,
+  NodeItem,
+  NodeItemBlock,
+  NodeListContainer,
+  NodeTitle,
+} from './components';
 import NodeForm from './NodeForm/NodeForm';
 import { NodeListPropsType } from './types';
 
@@ -14,6 +23,8 @@ export const NodeList: FC<NodeListPropsType> = ({
   nodeListID,
 }): ReturnComponentType => {
   const dispatch = useDispatch();
+
+  const readonly = useSelector(getReadOnlyValue);
 
   const removeNode = (nodeID: string): void => {
     dispatch(nodeListAction.removeNodeFromList(nodeListID, nodeID));
@@ -26,11 +37,12 @@ export const NodeList: FC<NodeListPropsType> = ({
   return (
     <NodeListContainer>
       <NodeForm nodeListID={nodeListID} />
-      <div>
-        {node.map(item => (
+      <NodeItemBlock>
+        {node.map((item, index) => (
           <NodeItem key={item.id}>
-            <NodeTitle>{item.title}</NodeTitle>
-            <hr />
+            <NodeTitle>
+              {index + 1}. {item.title}
+            </NodeTitle>
             <HelpfulBlock>
               <label htmlFor={item.id}>Was it helpful?</label>
               <input
@@ -38,15 +50,20 @@ export const NodeList: FC<NodeListPropsType> = ({
                 type="checkbox"
                 checked={item.isCompleted}
                 onChange={e => changeNodeStatusInList(item.id, e.currentTarget.checked)}
+                disabled={readonly}
               />
             </HelpfulBlock>
-            <div>Node: {item.description}</div>
-            <button type="button" onClick={() => removeNode(item.id)}>
+            <NodeDescription>Description: {item.description}</NodeDescription>
+            <DeleteNodeButton
+              disabled={readonly}
+              type="button"
+              onClick={() => removeNode(item.id)}
+            >
               Delete node
-            </button>
+            </DeleteNodeButton>
           </NodeItem>
         ))}
-      </div>
+      </NodeItemBlock>
     </NodeListContainer>
   );
 };
