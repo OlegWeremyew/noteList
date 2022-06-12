@@ -12,7 +12,7 @@ export const NodeListContainer = styled.div`
 `;
 
 export const InnerNodeContainer = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,23 +38,30 @@ export const NodeItemBlock = styled.div`
 `;
 
 export const NodeTitle = styled.h1`
+  width: 95%;
+  word-break: break-all;
   margin-top: 15px;
   margin-bottom: 5px;
-  width: 100%;
   display: flex;
   justify-content: center;
   color: ${({ theme }: ThemeType) => theme.color};
   font-size: 26px;
-  word-break: break-all;
 `;
 
 export const HelpfulBlock = styled.div`
-  margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 130px;
+  margin-top: 10px;
   align-items: center;
   color: ${({ theme }: ThemeType) => theme.color};
   font-size: 18px;
+
+  label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: ${({ theme }: ThemeType) => theme.border};
+  }
 
   input {
     &:disabled {
@@ -64,9 +71,9 @@ export const HelpfulBlock = styled.div`
 `;
 
 export const NodeDescription = styled.div`
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: 20px;
-  width: 100%;
+  width: 92%;
   display: flex;
   justify-content: flex-start;
   color: ${({ theme }: ThemeType) => theme.color};

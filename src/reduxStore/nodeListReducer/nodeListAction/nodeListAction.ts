@@ -1,9 +1,12 @@
 import {
   ADD_NEW_NODE_IN_LIST,
-  ADD_NEW_NODE_LIST, CHANGE_NODE_STATUS_IN_LIST,
+  ADD_NEW_NODE_LIST,
+  CHANGE_NODE_STATUS_IN_LIST,
   REMOVE_NODE_FROM_LIST,
-  REMOVE_NODE_LIST
-} from "../constants";
+  REMOVE_NODE_LIST,
+  SET_CURRENT_LIST_IN_LOCAL_STORAGE,
+} from '../constants';
+import { nodeListType } from '../types';
 
 export const nodeListAction = {
   addNewNodeList(title: string) {
@@ -48,6 +51,14 @@ export const nodeListAction = {
         nodeListID,
         nodeID,
         status,
+      },
+    } as const;
+  },
+  setNodeListInLocalStorage(list: nodeListType[]) {
+    return {
+      type: SET_CURRENT_LIST_IN_LOCAL_STORAGE,
+      payload: {
+        list,
       },
     } as const;
   },

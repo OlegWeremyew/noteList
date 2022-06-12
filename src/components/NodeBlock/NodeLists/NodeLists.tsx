@@ -3,15 +3,15 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { nodeListAction } from '../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
-import { getNodeLists } from '../../../selectors';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
+import { useGetNodeList } from '../../../utils/useGetNodeList';
 
 import { NodeListBlock, NodeListsContainer } from './components';
 import { InnerNode } from './InnerNode/InnerNode';
 import { NodeList } from './NodeList';
 
 export const NodeLists = (): ReturnComponentType => {
-  const nodeLists = useSelector(getNodeLists);
+  const nodeLists = useSelector(useGetNodeList);
 
   const dispatch = useDispatch();
 

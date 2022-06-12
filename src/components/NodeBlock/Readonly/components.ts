@@ -7,4 +7,9 @@ export const ReadonlyContainer = styled.div`
   margin: 0 auto;
   font-size: 18px;
   align-items: center;
+
+  label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;

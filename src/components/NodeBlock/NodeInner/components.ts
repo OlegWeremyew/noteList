@@ -8,6 +8,7 @@ export const NodeInnerContainer = styled.div`
   justify-content: center;
 `;
 export const Title = styled.h1`
+  min-height: 36px;
   margin: 10px 0;
   text-align: center;
   font-size: 36px;

@@ -6,6 +6,7 @@ import {
   CHANGE_NODE_STATUS_IN_LIST,
   REMOVE_NODE_FROM_LIST,
   REMOVE_NODE_LIST,
+  SET_CURRENT_LIST_IN_LOCAL_STORAGE,
 } from '../constants';
 import {
   ActionNodeListTypes,
@@ -15,24 +16,7 @@ import {
 } from '../types';
 
 export const initialNodeListState = {
-  nodeLists: [
-    {
-      id: '1',
-      title: 'df',
-      node: [
-        { id: '101', title: 'огурцы', description: 'dfdf', isCompleted: false },
-        { id: '102', title: 'огурцы1111', description: 'dfdf', isCompleted: true },
-      ],
-    },
-    {
-      id: '2',
-      title: 'dfsd',
-      node: [
-        { id: '201', title: 'Помидоры', description: 'dfdf', isCompleted: false },
-        { id: '202', title: 'Помидоры', description: 'dfdf', isCompleted: true },
-      ],
-    },
-  ] as nodeListType[],
+  nodeLists: [] as nodeListType[],
 };
 
 export const nodeListReducer = (
@@ -95,6 +79,12 @@ export const nodeListReducer = (
               }
             : item,
         ),
+      };
+    }
+    case SET_CURRENT_LIST_IN_LOCAL_STORAGE: {
+      return {
+        ...state,
+        nodeLists: action.payload.list,
       };
     }
     case REMOVE_NODE_LIST: {

@@ -14,7 +14,7 @@ export const InnerForm = (): ReturnComponentType => {
   const [title, setTitle] = useState<string>('');
 
   const adNewNodeList = (): void => {
-    if (title.trim()) {
+    if (title.trim() && title.length < 50) {
       dispatch(nodeListAction.addNewNodeList(title));
       setTitle('');
     }
@@ -29,7 +29,7 @@ export const InnerForm = (): ReturnComponentType => {
       <FormContainer>
         <Input
           type="text"
-          placeholder="Enter node title"
+          placeholder="Enter node list title"
           onChange={e => setNodeListTitle(e)}
           value={title}
           required

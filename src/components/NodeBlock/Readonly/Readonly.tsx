@@ -9,16 +9,21 @@ import { ReturnComponentType } from '../../../types/ReturnComponentType';
 import { ReadonlyContainer } from './components';
 
 export const Readonly = (): ReturnComponentType => {
-  const readonly = useSelector(getReadOnlyValue);
   const dispatch = useDispatch();
+  const readonly = useSelector(getReadOnlyValue);
 
   const setReadonlyMode = (): void => {
     dispatch(themeActions.setReadOnlyStatus(!readonly));
   };
   return (
     <ReadonlyContainer>
-      Readonly mode:
-      <input onChange={setReadonlyMode} type="checkbox" checked={readonly} />
+      <label htmlFor="readonlyMode">Readonly mode:</label>
+      <input
+        id="readonlyMode"
+        onChange={setReadonlyMode}
+        type="checkbox"
+        checked={readonly}
+      />
     </ReadonlyContainer>
   );
 };
