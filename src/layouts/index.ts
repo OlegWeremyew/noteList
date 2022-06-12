@@ -38,20 +38,16 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 94px;
+  height: 35px;
+  width: 140px;
   background: ${({ theme }: ThemeType) => theme.buttonsBgc};
   margin: 2px;
-  font-size: 50px;
+  font-size: 20px;
   cursor: pointer;
   color: ${({ theme }: ThemeType) => theme.color};
   border-radius: 5px;
   border: ${({ theme }: ThemeType) => theme.border} 3px solid;
-  @media (max-width: 445px) {
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
-  }
+
   &:hover {
     background: ${({ theme }: ThemeType) => theme.hoverBgc};
     border: outset 4px ${({ theme }: ThemeType) => theme.hoverBgc};

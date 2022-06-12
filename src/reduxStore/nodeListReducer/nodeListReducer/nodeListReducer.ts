@@ -1,6 +1,12 @@
 import { v1 } from 'uuid';
 
-import { ADD_NEW_NODE_IN_LIST, ADD_NEW_NODE_LIST, REMOVE_NODE_LIST } from '../constants';
+import {
+  ADD_NEW_NODE_IN_LIST,
+  ADD_NEW_NODE_LIST,
+  CHANGE_NODE_STATUS_IN_LIST,
+  REMOVE_NODE_FROM_LIST,
+  REMOVE_NODE_LIST,
+} from '../constants';
 import {
   ActionNodeListTypes,
   initialNodeListType,
@@ -57,6 +63,36 @@ export const nodeListReducer = (
         nodeLists: state.nodeLists.map(item =>
           item.id === action.payload.nodeListID
             ? { ...item, node: [...item.node, newNode] }
+            : item,
+        ),
+      };
+    }
+    case REMOVE_NODE_FROM_LIST: {
+      return {
+        ...state,
+        nodeLists: state.nodeLists.map(item =>
+          item.id === action.payload.nodeListID
+            ? {
+                ...item,
+                node: item.node.filter(nodeItem => nodeItem.id !== action.payload.nodeID),
+              }
+            : item,
+        ),
+      };
+    }
+    case CHANGE_NODE_STATUS_IN_LIST: {
+      return {
+        ...state,
+        nodeLists: state.nodeLists.map(item =>
+          item.id === action.payload.nodeListID
+            ? {
+                ...item,
+                node: item.node.map(nodeItem =>
+                  nodeItem.id === action.payload.nodeID
+                    ? { ...nodeItem, isCompleted: action.payload.status }
+                    : nodeItem,
+                ),
+              }
             : item,
         ),
       };

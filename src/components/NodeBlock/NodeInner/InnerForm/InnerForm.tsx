@@ -2,10 +2,11 @@ import React, { ChangeEvent, useState } from 'react';
 
 import { useDispatch } from 'react-redux';
 
+import { StyledButton } from '../../../../layouts';
 import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
-import { FormContainer, InnerFormContainer } from './components';
+import { FormContainer, InnerFormContainer, Input } from './components';
 
 export const InnerForm = (): ReturnComponentType => {
   const dispatch = useDispatch();
@@ -30,15 +31,15 @@ export const InnerForm = (): ReturnComponentType => {
   return (
     <InnerFormContainer>
       <FormContainer>
-        <input
+        <Input
           type="text"
-          placeholder="enter node title"
+          placeholder="Enter node title"
           onChange={e => setNodeListTitle(e)}
           value={title}
         />
-        <button type="button" onClick={adNewNodeList}>
-          add
-        </button>
+        <StyledButton type="button" onClick={adNewNodeList}>
+          Add list
+        </StyledButton>
       </FormContainer>
       {error}
     </InnerFormContainer>

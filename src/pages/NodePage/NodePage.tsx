@@ -3,10 +3,12 @@ import React from 'react';
 import { NodeInner, NodeLists } from '../../components/NodeBlock';
 import { ReturnComponentType } from '../../types/ReturnComponentType';
 
+import { NodePageContainer } from './components';
+
 const NodePage = (): ReturnComponentType => (
-  <div>
+  <NodePageContainer>
     <NodeInner />
     <NodeLists />
-  </div>
+  </NodePageContainer>
 );
 export default NodePage;

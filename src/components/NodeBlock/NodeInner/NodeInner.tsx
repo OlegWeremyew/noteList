@@ -2,12 +2,12 @@ import React from 'react';
 
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
 
-import { NodeInnerContainer } from './components';
+import { NodeInnerContainer, Title } from './components';
 import { InnerForm } from './InnerForm';
 
 export const NodeInner = (): ReturnComponentType => (
   <NodeInnerContainer>
-    <h1>Node List</h1>
+    <Title>Node List</Title>
     <InnerForm />
   </NodeInnerContainer>
 );

@@ -6,7 +6,7 @@ import { nodeListAction } from '../../../reduxStore/nodeListReducer/nodeListActi
 import { getNodeLists } from '../../../selectors';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
 
-import { NodeListsContainer } from './components';
+import { NodeListBlock, NodeListsContainer } from './components';
 import { InnerNode } from './InnerNode/InnerNode';
 import { NodeList } from './NodeList';
 
@@ -22,10 +22,10 @@ export const NodeLists = (): ReturnComponentType => {
   return (
     <NodeListsContainer>
       {nodeLists.map(nodeList => (
-        <React.Fragment key={nodeList.id}>
+        <NodeListBlock key={nodeList.id}>
           <InnerNode removeNodeList={removeNodeList} nodeList={nodeList} />
           <NodeList node={nodeList.node} nodeListID={nodeList.id} />
-        </React.Fragment>
+        </NodeListBlock>
       ))}
     </NodeListsContainer>
   );
