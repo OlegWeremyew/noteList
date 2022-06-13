@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknote_list=self.webpackChunknote_list||[]).push([[610],{610:function(n,t,e){e.r(t),e.d(t,{default:function(){return r}});e(791);var s,i=e(234),l=e(168),u=e(31).ZP.div(s||(s=(0,l.Z)(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n"]))),c=e(184),r=function(){return(0,c.jsxs)(u,{children:[(0,c.jsx)(i.LM,{}),(0,c.jsx)(i.Fl,{}),(0,c.jsx)(i.UF,{})]})}}}]);
+//# sourceMappingURL=610.8ba8fb0c.chunk.js.map
