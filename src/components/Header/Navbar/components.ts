@@ -9,4 +9,8 @@ export const NavbarContainer = styled.nav`
   width: 160px;
   margin-right: 10px;
   color: ${({ theme }: ThemeType) => theme.color};
+
+  @media (max-width: 550px) {
+    width: 120px;
+  }
 `;
