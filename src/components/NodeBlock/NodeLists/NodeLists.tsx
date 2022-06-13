@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { nodeListAction } from '../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
-import { useGetNodeList } from '../../../utils/useGetNodeList';
+import { useGetNodeList } from '../../../utils';
 
 import { NodeListBlock, NodeListsContainer } from './components';
 import { InnerNode } from './InnerNode/InnerNode';
 import { NodeList } from './NodeList';
 
 export const NodeLists = (): ReturnComponentType => {
-  const nodeLists = useSelector(useGetNodeList);
+  const nodeLists = useGetNodeList();
 
   const dispatch = useDispatch();
 

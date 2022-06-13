@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../types/themeType';
+import { ThemeType } from '../../../../../../types/themeType';
 
-export const ListTitle = styled.h1`
+export const NodeTitleContainer = styled.h1`
+  width: 95%;
   word-break: break-all;
-  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
   color: ${({ theme }: ThemeType) => theme.color};
   font-size: 26px;
-  margin-left: 15px;
-  cursor: pointer;
 
   &:hover {
     opacity: 0.8;
     text-decoration: underline;
+    cursor: pointer;
   }
 `;
 
@@ -23,7 +26,7 @@ export const Input = styled.input`
   padding-left: 5px;
   font-size: 18px;
   border-radius: 5px;
-  margin: 5px 0 5px 0;
+  margin: 15px 0 5px 0;
   border: ${({ theme }: ThemeType) => theme.border} 1px solid;
   background: ${({ theme }: ThemeType) => theme.input};
 

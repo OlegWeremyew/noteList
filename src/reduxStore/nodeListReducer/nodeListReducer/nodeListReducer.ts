@@ -3,6 +3,9 @@ import { v1 } from 'uuid';
 import {
   ADD_NEW_NODE_IN_LIST,
   ADD_NEW_NODE_LIST,
+  CHANGE_NODE_LIST_ITEM_DESCRIPTION,
+  CHANGE_NODE_LIST_ITEM_TITLE,
+  CHANGE_NODE_LIST_TILE,
   CHANGE_NODE_STATUS_IN_LIST,
   REMOVE_NODE_FROM_LIST,
   REMOVE_NODE_LIST,
@@ -91,6 +94,53 @@ export const nodeListReducer = (
       return {
         ...state,
         nodeLists: state.nodeLists.filter(node => node.id !== action.payload.nodeListID),
+      };
+    }
+    case CHANGE_NODE_LIST_TILE: {
+      return {
+        ...state,
+        nodeLists: state.nodeLists.map(item =>
+          item.id === action.payload.listID
+            ? {
+                ...item,
+                title: action.payload.newTitle,
+              }
+            : item,
+        ),
+      };
+    }
+    case CHANGE_NODE_LIST_ITEM_TITLE: {
+      return {
+        ...state,
+        nodeLists: state.nodeLists.map(item =>
+          item.id === action.payload.nodeListID
+            ? {
+                ...item,
+                node: item.node.map(nodeItem =>
+                  nodeItem.id === action.payload.itemID
+                    ? { ...nodeItem, title: action.payload.newTitle }
+                    : nodeItem,
+                ),
+              }
+            : item,
+        ),
+      };
+    }
+    case CHANGE_NODE_LIST_ITEM_DESCRIPTION: {
+      return {
+        ...state,
+        nodeLists: state.nodeLists.map(item =>
+          item.id === action.payload.nodeListID
+            ? {
+                ...item,
+                node: item.node.map(nodeItem =>
+                  nodeItem.id === action.payload.itemID
+                    ? { ...nodeItem, description: action.payload.newDescription }
+                    : nodeItem,
+                ),
+              }
+            : item,
+        ),
       };
     }
     default:

@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { themeActions } from '../../../reduxStore';
-import { getReadOnlyValue } from '../../../selectors';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
+import { useGetReadonly } from '../../../utils';
 
 import { ReadonlyContainer } from './components';
 
 export const Readonly = (): ReturnComponentType => {
   const dispatch = useDispatch();
-  const readonly = useSelector(getReadOnlyValue);
+  const readonly = useGetReadonly();
 
   const setReadonlyMode = (): void => {
     dispatch(themeActions.setReadOnlyStatus(!readonly));

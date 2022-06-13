@@ -6,16 +6,9 @@ import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListA
 import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
-import {
-  DeleteNodeButton,
-  HelpfulBlock,
-  NodeDescription,
-  NodeItem,
-  NodeItemBlock,
-  NodeListContainer,
-  NodeTitle,
-} from './components';
+import { NodeItemBlock, NodeListContainer } from './components';
 import NodeForm from './NodeForm/NodeForm';
+import NodeItem from './NodeItem/NodeItem';
 import { NodeListPropsType } from './types';
 
 export const NodeList: FC<NodeListPropsType> = ({
@@ -39,29 +32,15 @@ export const NodeList: FC<NodeListPropsType> = ({
       <NodeForm nodeListID={nodeListID} />
       <NodeItemBlock>
         {node.map((item, index) => (
-          <NodeItem key={item.id}>
-            <NodeTitle>
-              {index + 1}. {item.title}
-            </NodeTitle>
-            <HelpfulBlock>
-              <label htmlFor={item.id}>Was it helpful?</label>
-              <input
-                id={item.id}
-                type="checkbox"
-                checked={item.isCompleted}
-                onChange={e => changeNodeStatusInList(item.id, e.currentTarget.checked)}
-                disabled={readonly}
-              />
-            </HelpfulBlock>
-            <NodeDescription>Description: {item.description}</NodeDescription>
-            <DeleteNodeButton
-              disabled={readonly}
-              type="button"
-              onClick={() => removeNode(item.id)}
-            >
-              Delete node
-            </DeleteNodeButton>
-          </NodeItem>
+          <NodeItem
+            nodeListID={nodeListID}
+            key={item.id}
+            item={item}
+            index={index}
+            readonly={readonly}
+            removeNode={removeNode}
+            changeNodeStatusInList={changeNodeStatusInList}
+          />
         ))}
       </NodeItemBlock>
     </NodeListContainer>

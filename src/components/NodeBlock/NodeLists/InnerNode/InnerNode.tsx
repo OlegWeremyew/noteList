@@ -1,27 +1,55 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { StyledButton } from '../../../../layouts';
+import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
 import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 import { InnerNodeContainer } from '../NodeList/components';
 
-import { ListTitle } from './components';
+import { Input, ListTitle } from './components';
+import { InnerNodeType } from './types';
 
-export const InnerNode: FC<any> = ({ removeNodeList, nodeList }): ReturnComponentType => {
+export const InnerNode: FC<InnerNodeType> = ({
+  removeNodeList,
+  nodeList,
+}): ReturnComponentType => {
+  const dispatch = useDispatch();
   const readonly = useSelector(getReadOnlyValue);
+  const [status, setStatus] = useState<boolean>(false);
+  const [newTitle, setNewTitle] = useState<string>(nodeList.title);
+
+  const changeNodeListTitle = (e: string): void => {
+    if (e.trim()) {
+      setNewTitle(e);
+      dispatch(nodeListAction.changeNodeListTitle(nodeList.id, newTitle));
+    }
+  };
 
   return (
     <InnerNodeContainer>
-      <ListTitle>{nodeList.title}</ListTitle>
-      <StyledButton
-        type="button"
-        onClick={() => removeNodeList(nodeList.id)}
-        disabled={readonly}
-      >
-        Del
-      </StyledButton>
+      {status && !readonly ? (
+        <Input
+          type="text"
+          value={newTitle}
+          placeholder="enter new list title"
+          onChange={e => changeNodeListTitle(e.currentTarget.value)}
+          onBlur={() => setStatus(false)}
+          autoFocus
+        />
+      ) : (
+        <>
+          <ListTitle onDoubleClick={() => setStatus(true)}>{newTitle}</ListTitle>
+          <StyledButton
+            type="button"
+            onClick={() => removeNodeList(nodeList.id)}
+            disabled={readonly}
+          >
+            Del
+          </StyledButton>
+        </>
+      )}
     </InnerNodeContainer>
   );
 };

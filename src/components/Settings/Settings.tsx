@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 
 import { SettingsContainer } from '../../layouts';
 import { ReturnComponentType } from '../../types/ReturnComponentType';
@@ -8,8 +8,8 @@ import { SettingsButton } from './SettingsButton';
 import { SwitchTheme } from './SwitchTheme';
 import { SettingsPropsType } from './types';
 
-export const Settings = memo(
-  ({ resetAllSettings }: SettingsPropsType): ReturnComponentType => (
+export const Settings: FC<SettingsPropsType> = memo(
+  ({ resetAllSettings }): ReturnComponentType => (
     <SettingsContainer>
       <Title>Settings</Title>
       <SettingsButton
