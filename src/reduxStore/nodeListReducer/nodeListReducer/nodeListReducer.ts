@@ -1,5 +1,6 @@
 import { v1 } from 'uuid';
 
+import { EMPTY_ARRAY } from '../../../constants';
 import {
   ADD_NEW_NODE_IN_LIST,
   ADD_NEW_NODE_LIST,
@@ -19,7 +20,7 @@ import {
 } from '../types';
 
 export const initialNodeListState = {
-  nodeLists: [] as nodeListType[],
+  nodeLists: EMPTY_ARRAY as nodeListType[],
 };
 
 export const nodeListReducer = (
@@ -31,7 +32,8 @@ export const nodeListReducer = (
       const newItem = {
         id: v1(),
         title: action.payload.title,
-        node: [],
+        node: EMPTY_ARRAY,
+        sort: false,
       };
       return {
         ...state,

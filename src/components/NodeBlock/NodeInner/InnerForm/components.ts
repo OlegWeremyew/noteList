@@ -63,4 +63,8 @@ export const InnerButton = styled.button`
   &:not([disabled]):active {
     opacity: 0.8;
   }
+
+  @media (max-width: 450px) {
+    font-size: 17px;
+  }
 `;

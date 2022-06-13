@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import { ThemeType } from '../../../../../types/themeType';
 
 export const NodeFormContainer = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px 0;
+  background: ${({ theme }: ThemeType) => theme.background};
+  border: 2px solid ${({ theme }: ThemeType) => theme.border};
+  border-radius: 15px;
 `;
 
 export const Input = styled.input`
   color: ${({ theme }: ThemeType) => theme.color};
   height: 35px;
-  width: 100%;
+  width: 90%;
   padding-left: 5px;
   font-size: 18px;
   border-radius: 5px;
@@ -31,7 +35,7 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  width: 100%;
+  width: 90%;
   float: left;
   margin-bottom: 3px;
   cursor: pointer;
@@ -45,7 +49,7 @@ export const Label = styled.label`
 export const Textarea = styled.textarea`
   color: ${({ theme }: ThemeType) => theme.color};
   height: 80px;
-  width: 100%;
+  width: 90%;
   padding-left: 5px;
   font-size: 18px;
   border-radius: 5px;
@@ -69,7 +73,7 @@ export const NodeButton = styled.button`
   align-items: center;
   justify-content: center;
   height: 35px;
-  width: 100%;
+  width: 90%;
   background: ${({ theme }: ThemeType) => theme.hoverBgc};
   border: outset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
   margin: 7px 2px 2px 2px;

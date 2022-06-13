@@ -15,7 +15,7 @@ export const NodeListBlock = styled.div`
   align-items: center;
   width: 380px;
   margin: 15px 5px;
-  border-radius: 15px;
+  border-radius: 10px;
   background: ${({ theme }: ThemeType) => theme.buttonsBgc};
   border: 3px solid ${({ theme }: ThemeType) => theme.border};
 `;

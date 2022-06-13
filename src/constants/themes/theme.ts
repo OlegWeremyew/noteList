@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-import { colors } from './constants';
+import { colors } from '../index';
 
 export const themeLight: DefaultTheme = {
   background: colors.white,

@@ -1,5 +1,5 @@
 import { InferActionTypes } from '../../types';
-import { nodeListAction } from '../nodeListAction/nodeListAction';
+import { nodeListAction } from '../nodeListAction';
 
 export type initialNodeListType = {
   nodeLists: nodeListType[];
@@ -10,6 +10,7 @@ export type nodeListType = {
   id: string;
   title: string;
   node: NodeType[];
+  sort: boolean;
 };
 
 export type NodeType = {

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { nodeListAction } from '../../../../reduxStore';
 import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 

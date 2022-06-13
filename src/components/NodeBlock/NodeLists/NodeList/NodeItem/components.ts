@@ -7,10 +7,10 @@ export const NodeItemContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  border-radius: 3px;
   margin: 10px 0;
-  border-radius: 7px;
-  background: ${({ theme }: ThemeType) => theme.buttonsBgc};
-  border: 2px solid ${({ theme }: ThemeType) => theme.border};
+  background: ${({ theme }: ThemeType) => theme.background};
+  border: 1px solid ${({ theme }: ThemeType) => theme.border};
 `;
 
 export const DeleteNodeButton = styled.button`

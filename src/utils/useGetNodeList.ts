@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { nodeListAction } from '../reduxStore';
 import { nodeListType } from '../reduxStore/nodeListReducer/types';
 import { getNodeLists } from '../selectors';
 

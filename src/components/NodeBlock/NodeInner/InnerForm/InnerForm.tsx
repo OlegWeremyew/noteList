@@ -2,7 +2,8 @@ import React, { ChangeEvent, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { EMPTY_STRING } from '../../../../constants';
+import { nodeListAction } from '../../../../reduxStore';
 import { getReadOnlyValue } from '../../../../selectors';
 import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 
@@ -16,7 +17,7 @@ export const InnerForm = (): ReturnComponentType => {
   const adNewNodeList = (): void => {
     if (title.trim() && title.length < 50) {
       dispatch(nodeListAction.addNewNodeList(title));
-      setTitle('');
+      setTitle(EMPTY_STRING);
     }
   };
 

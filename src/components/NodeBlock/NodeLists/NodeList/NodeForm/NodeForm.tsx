@@ -2,7 +2,8 @@ import React, { ChangeEvent, FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { EMPTY_STRING } from '../../../../../constants';
+import { nodeListAction } from '../../../../../reduxStore';
 import { getReadOnlyValue } from '../../../../../selectors';
 import { ReturnComponentType } from '../../../../../types/ReturnComponentType';
 
@@ -12,8 +13,8 @@ import { NodeFormType } from './types';
 const NodeForm: FC<NodeFormType> = ({ nodeListID }): ReturnComponentType => {
   const dispatch = useDispatch();
   const readonly = useSelector(getReadOnlyValue);
-  const [nodeTitle, setNodeTitle] = useState<string>('');
-  const [nodeDescription, setNodeDescription] = useState<string>('');
+  const [nodeTitle, setNodeTitle] = useState<string>(EMPTY_STRING);
+  const [nodeDescription, setNodeDescription] = useState<string>(EMPTY_STRING);
 
   const setNewNodeTitle = (e: ChangeEvent<HTMLInputElement>): void => {
     setNodeTitle(e.currentTarget.value);

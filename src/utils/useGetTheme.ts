@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { themeDark, themeHeavenly, themeLight } from '../constants';
 import { themeActions } from '../reduxStore';
 import { getThemeValue } from '../selectors';
-import { themeDark, themeHeavenly, themeLight } from '../theme';
 import { ThemeObjectType } from '../types/themeType';
 
 export const useGetTheme = (): ThemeObjectType => {

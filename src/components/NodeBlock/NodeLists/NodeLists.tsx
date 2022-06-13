@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { nodeListAction } from '../../../reduxStore/nodeListReducer/nodeListAction/nodeListAction';
+import { nodeListAction } from '../../../reduxStore';
 import { ReturnComponentType } from '../../../types/ReturnComponentType';
 import { useGetNodeList } from '../../../utils';
 
