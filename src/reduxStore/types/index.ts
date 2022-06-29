@@ -1,4 +1,4 @@
-import { rootReducer } from '../store';
+import { rootReducer } from 'reduxStore/store';
 
 export type PropertiesTypes<T> = T extends { [key: string]: infer U } ? U : never;
 

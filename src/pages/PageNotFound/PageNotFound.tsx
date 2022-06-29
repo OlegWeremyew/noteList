@@ -2,10 +2,10 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import { PATH } from '../../constants';
-import { ReturnComponentType } from '../../types/ReturnComponentType';
-
 import { PageContainer, ReturnButton, Title } from './components';
+
+import { PATH } from 'constants/router';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 const PageNotFound = (): ReturnComponentType => {
   const navigate = useNavigate();

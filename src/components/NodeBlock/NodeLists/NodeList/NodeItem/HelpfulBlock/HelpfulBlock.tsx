@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { ReturnComponentType } from '../../../../../../types/ReturnComponentType';
-
 import { HelpfulBlockContainer } from './components';
 import { HelpfulBlockType } from './types';
+
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const HelpfulBlock: FC<HelpfulBlockType> = ({
   item,

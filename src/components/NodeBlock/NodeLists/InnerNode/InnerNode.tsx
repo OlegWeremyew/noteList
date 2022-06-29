@@ -2,14 +2,15 @@ import React, { FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { StyledButton } from '../../../../layouts';
-import { nodeListAction } from '../../../../reduxStore';
-import { getReadOnlyValue } from '../../../../selectors';
-import { ReturnComponentType } from '../../../../types/ReturnComponentType';
 import { InnerNodeContainer } from '../NodeList/components';
 
 import { Input, ListTitle } from './components';
 import { InnerNodeType } from './types';
+
+import { StyledButton } from 'layouts';
+import { nodeListAction } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const InnerNode: FC<InnerNodeType> = ({
   removeNodeList,

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ThemeType } from '../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const rotateAnimation = keyframes`
   0% {
@@ -16,20 +16,20 @@ export const SettingsContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
-  @media (max-width: 520px) {
+  @media screen and (max-width: 520px) {
     width: 400px;
   }
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     width: 310px;
   }
 `;
 
 export const SettingsTitle = styled.h1`
   font-size: 28px;
-  @media (max-width: 520px) {
+  @media screen and (max-width: 520px) {
     font-size: 20px;
   }
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 18px;
   }
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const StyledButton = styled.button`
   height: 30px;
@@ -19,12 +19,12 @@ export const StyledButton = styled.button`
   &:active {
     border: inset 4px ${({ theme }: ThemeType) => theme.hoverBgc};
   }
-  @media (max-width: 520px) {
+  @media screen and (max-width: 520px) {
     font-size: 18px;
     height: 25px;
     width: 100px;
   }
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 15px;
     height: 22px;
     width: 70px;

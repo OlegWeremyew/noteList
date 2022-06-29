@@ -2,12 +2,12 @@ import React, { FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../../../reduxStore';
-import { getReadOnlyValue } from '../../../../../../selectors';
-import { ReturnComponentType } from '../../../../../../types/ReturnComponentType';
-
 import { Input, NodeTitleContainer } from './components';
 import { NodeTitlePropsType } from './types';
+
+import { nodeListAction } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const NodeTitle: FC<NodeTitlePropsType> = ({
   index,

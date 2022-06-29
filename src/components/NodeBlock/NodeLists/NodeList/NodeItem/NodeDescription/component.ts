@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const NodeDescriptionContainer = styled.div`
   margin-left: 10px;

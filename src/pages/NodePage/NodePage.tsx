@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NodeInner, NodeLists, Readonly } from '../../components';
-import { ReturnComponentType } from '../../types/ReturnComponentType';
-
 import { NodePageContainer } from './components';
+
+import { NodeInner, NodeLists, Readonly } from 'components';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 const NodePage = (): ReturnComponentType => (
   <NodePageContainer>

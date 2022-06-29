@@ -2,14 +2,14 @@ import React, { ChangeEvent, useCallback } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { SettingsTitle } from '../../../layouts';
-import { themeActions } from '../../../reduxStore';
-import { MainThemeType } from '../../../reduxStore/themeReducer/types';
-import { ReturnComponentType } from '../../../types/ReturnComponentType';
-
 import { Container } from './components';
 import { SwitchSelect } from './SwitchSelect';
 import { DefaultSelectType } from './types';
+
+import { SettingsTitle } from 'layouts';
+import { themeActions } from 'reduxStore';
+import { MainThemeType } from 'reduxStore/themeReducer/types';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const SwitchTheme: React.FC<DefaultSelectType> = ({
   onChange,

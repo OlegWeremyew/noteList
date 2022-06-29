@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../reduxStore';
-import { nodeListType } from '../reduxStore/nodeListReducer/types';
-import { getNodeLists } from '../selectors';
+import { nodeListAction } from 'reduxStore';
+import { nodeListType } from 'reduxStore/nodeListReducer/types';
+import { getNodeLists } from 'selectors';
 
 export const useGetNodeList = (): nodeListType[] => {
   const dispatch = useDispatch();

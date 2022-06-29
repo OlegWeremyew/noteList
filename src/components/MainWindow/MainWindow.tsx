@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 
-import { PATH } from '../../constants';
-import { ReturnComponentType } from '../../types/ReturnComponentType';
-
 import { MainContainer } from './components';
 
-const NodePage = React.lazy(() => import('../../pages/NodePage/NodePage'));
-const SettingsPage = React.lazy(() => import('../../pages/SettingsPage/SettingsPage'));
-const PageNotFound = React.lazy(() => import('../../pages/PageNotFound/PageNotFound'));
+import { PATH } from 'constants/router';
+import { ReturnComponentType } from 'types/ReturnComponentType';
+
+const NodePage = React.lazy(() => import('pages/NodePage/NodePage'));
+const SettingsPage = React.lazy(() => import('pages/SettingsPage/SettingsPage'));
+const PageNotFound = React.lazy(() => import('pages/PageNotFound/PageNotFound'));
 
 export const MainWindow = (): ReturnComponentType => (
   <MainContainer>

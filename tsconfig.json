@@ -2,6 +2,17 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "src",
+    "paths": {
+      "App/*": ["./App/*"],
+      "components/*": ["./components/*"],
+      "constants/*": ["./constants/*"],
+      "layouts/*": ["./layouts/*"],
+      "pages/*": ["./pages/*"],
+      "reduxStore/*": ["./reduxStore/*"],
+      "selectors/*": ["./selectors/*"],
+      "types/*": ["./types/*"],
+      "utils/*": ["./utils/*"],
+      },
     "lib": [
       "dom",
       "dom.iterable",

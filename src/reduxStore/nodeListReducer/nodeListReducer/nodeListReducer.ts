@@ -1,6 +1,6 @@
 import { v1 } from 'uuid';
 
-import { EMPTY_ARRAY } from '../../../constants';
+import { EMPTY_ARRAY } from 'constants/variables';
 import {
   ADD_NEW_NODE_IN_LIST,
   ADD_NEW_NODE_LIST,
@@ -11,13 +11,13 @@ import {
   REMOVE_NODE_FROM_LIST,
   REMOVE_NODE_LIST,
   SET_CURRENT_LIST_IN_LOCAL_STORAGE,
-} from '../constants';
+} from 'reduxStore/nodeListReducer/constants';
 import {
   ActionNodeListTypes,
   initialNodeListType,
   nodeListType,
   NodeType,
-} from '../types';
+} from 'reduxStore/nodeListReducer/types';
 
 export const initialNodeListState = {
   nodeLists: EMPTY_ARRAY as nodeListType[],

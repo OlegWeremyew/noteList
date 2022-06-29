@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const NavbarContainer = styled.nav`
   display: flex;
@@ -10,7 +10,7 @@ export const NavbarContainer = styled.nav`
   margin-right: 10px;
   color: ${({ theme }: ThemeType) => theme.color};
 
-  @media (max-width: 550px) {
+  @media screen and (max-width: 550px) {
     width: 120px;
   }
 `;

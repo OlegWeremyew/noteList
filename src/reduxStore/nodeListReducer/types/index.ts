@@ -1,5 +1,5 @@
-import { InferActionTypes } from '../../types';
-import { nodeListAction } from '../nodeListAction';
+import { nodeListAction } from 'reduxStore/nodeListReducer';
+import { InferActionTypes } from 'reduxStore/types';
 
 export type initialNodeListType = {
   nodeLists: nodeListType[];

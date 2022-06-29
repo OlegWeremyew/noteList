@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const ListTitle = styled.h1`
   word-break: break-all;

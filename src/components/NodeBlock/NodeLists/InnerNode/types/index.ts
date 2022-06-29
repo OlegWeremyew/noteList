@@ -1,4 +1,4 @@
-import { nodeListType } from '../../../../../reduxStore/nodeListReducer/types';
+import { nodeListType } from 'reduxStore/nodeListReducer/types';
 
 export type InnerNodeType = {
   removeNodeList: (nodeListID: string) => void;

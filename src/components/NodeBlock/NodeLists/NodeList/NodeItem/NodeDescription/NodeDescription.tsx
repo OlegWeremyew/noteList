@@ -2,12 +2,12 @@ import React, { FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../../../reduxStore';
-import { getReadOnlyValue } from '../../../../../../selectors';
-import { ReturnComponentType } from '../../../../../../types/ReturnComponentType';
-
 import { NodeDescriptionContainer, Textarea } from './component';
 import { NodeDescriptionPropsType } from './types';
+
+import { nodeListAction } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const NodeDescription: FC<NodeDescriptionPropsType> = ({
   description,

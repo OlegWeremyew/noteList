@@ -2,14 +2,14 @@ import React, { FC } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nodeListAction } from '../../../../reduxStore';
-import { getReadOnlyValue } from '../../../../selectors';
-import { ReturnComponentType } from '../../../../types/ReturnComponentType';
-
 import { NodeItemBlock, NodeListContainer } from './components';
 import NodeForm from './NodeForm/NodeForm';
 import NodeItem from './NodeItem/NodeItem';
 import { NodeListPropsType } from './types';
+
+import { nodeListAction } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const NodeList: FC<NodeListPropsType> = ({
   node,

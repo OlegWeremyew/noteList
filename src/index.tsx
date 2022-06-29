@@ -6,7 +6,8 @@ import { HashRouter } from 'react-router-dom';
 
 import { App } from './App';
 import { GlobalStyles } from './globalStyles';
-import { store } from './reduxStore/store';
+
+import { store } from 'reduxStore/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 

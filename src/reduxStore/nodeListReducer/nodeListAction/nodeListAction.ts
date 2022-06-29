@@ -8,8 +8,8 @@ import {
   REMOVE_NODE_FROM_LIST,
   REMOVE_NODE_LIST,
   SET_CURRENT_LIST_IN_LOCAL_STORAGE,
-} from '../constants';
-import { nodeListType } from '../types';
+} from 'reduxStore/nodeListReducer/constants';
+import { nodeListType } from 'reduxStore/nodeListReducer/types';
 
 export const nodeListAction = {
   addNewNodeList(title: string) {

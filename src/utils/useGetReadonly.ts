@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { themeActions } from '../reduxStore';
-import { getReadOnlyValue } from '../selectors';
+import { themeActions } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
 
 export const useGetReadonly = (): boolean => {
   const dispatch = useDispatch();

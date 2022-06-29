@@ -2,13 +2,13 @@ import React, { ChangeEvent, FC, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { EMPTY_STRING } from '../../../../../constants';
-import { nodeListAction } from '../../../../../reduxStore';
-import { getReadOnlyValue } from '../../../../../selectors';
-import { ReturnComponentType } from '../../../../../types/ReturnComponentType';
-
 import { Input, Label, NodeButton, NodeFormContainer, Textarea } from './components';
 import { NodeFormType } from './types';
+
+import { EMPTY_STRING } from 'constants/variables';
+import { nodeListAction } from 'reduxStore';
+import { getReadOnlyValue } from 'selectors';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 const NodeForm: FC<NodeFormType> = ({ nodeListID }): ReturnComponentType => {
   const dispatch = useDispatch();

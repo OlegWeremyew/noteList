@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const NodeTitleContainer = styled.h1`
   width: 95%;
   word-break: break-all;
   margin-top: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 5px
   display: flex;
   justify-content: center;
   color: ${({ theme }: ThemeType) => theme.color};

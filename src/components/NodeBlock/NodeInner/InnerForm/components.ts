@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const InnerFormContainer = styled.div`
   display: flex;
@@ -64,7 +64,7 @@ export const InnerButton = styled.button`
     opacity: 0.8;
   }
 
-  @media (max-width: 450px) {
+  @media screen and (max-width: 450px) {
     font-size: 17px;
   }
 `;

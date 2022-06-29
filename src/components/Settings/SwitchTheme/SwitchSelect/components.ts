@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeType } from '../../../../types/themeType';
+import { ThemeType } from 'types/themeType';
 
 export const StyledSelect = styled.select`
   width: 300px;
@@ -15,11 +15,11 @@ export const StyledSelect = styled.select`
   &:focus {
     outline: none;
   }
-  @media (max-width: 520px) {
+  @media screen and (max-width: 520px) {
     font-size: 16px;
     width: 240px;
   }
-  @media (max-width: 420px) {
+  @media screen and (max-width: 420px) {
     font-size: 14px;
     width: 210px;
   }

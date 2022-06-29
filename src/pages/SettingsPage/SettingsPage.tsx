@@ -2,10 +2,10 @@ import React, { useCallback } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { Settings } from '../../components';
-import { SettingsContainer } from '../../layouts';
-import { themeActions } from '../../reduxStore';
-import { ReturnComponentType } from '../../types/ReturnComponentType';
+import { Settings } from 'components';
+import { SettingsContainer } from 'layouts';
+import { themeActions } from 'reduxStore';
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 const SettingsPage = (): ReturnComponentType => {
   const dispatch = useDispatch();

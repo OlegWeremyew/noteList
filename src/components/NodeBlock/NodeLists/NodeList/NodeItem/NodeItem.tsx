@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import { ReturnComponentType } from '../../../../../types/ReturnComponentType';
-
 import { DeleteNodeButton, NodeItemContainer } from './components';
 import { HelpfulBlock } from './HelpfulBlock';
 import { NodeDescription } from './NodeDescription';
 import { NodeTitle } from './NodeTitle';
 import { NodeItemPropsType } from './types';
+
+import { ReturnComponentType } from 'types/ReturnComponentType';
 
 export const NodeItem: FC<NodeItemPropsType> = ({
   item,
